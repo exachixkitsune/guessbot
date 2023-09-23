@@ -13,7 +13,7 @@ import sys
 Logger = logging.Logger
 
 
-def init() -> None:
+def init(filepath: str = None) -> None:
     logger = logging.getLogger("foxbot")
 
     if sys.stdout.isatty():
@@ -26,7 +26,7 @@ def init() -> None:
         logger.addHandler(handler)
         logger.setLevel(logging.DEBUG)
     else:
-        handler = logging.FileHandler("foxbot.log")
+        handler = logging.FileHandler(filepath / "foxbot.log")
         handler.setFormatter(logging.Formatter("[%(name)s:%(levelname)s] %(message)s"))
 
         logger.addHandler(handler)

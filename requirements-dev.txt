@@ -5,7 +5,7 @@
 -r requirements.txt
 
 # Installation toolchain
-setuptools~=67.4
+setuptools>=70.0.0
 
 # Copyright linting toolchain
 reuse~=1.1
